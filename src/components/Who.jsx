@@ -20,6 +20,7 @@ const Container = styled.div`
 
 const Left = styled.div`
 	flex: 1;
+	/* background-color: yellow; */
 `;
 
 const Right = styled.div`

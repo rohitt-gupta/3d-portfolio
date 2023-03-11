@@ -6,6 +6,8 @@ import Who from "./components/Who";
 import styled from "styled-components";
 
 const Container = styled.div`
+	padding-left: 100px;
+	padding-right: 100px;
 	margin: 0;
 	height: 100vh;
 	color: white;
