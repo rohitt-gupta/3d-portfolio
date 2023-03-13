@@ -4,7 +4,6 @@ import Hero from "./components/Hero";
 import Works from "./components/Works";
 import Who from "./components/Who";
 import styled from "styled-components";
-import Test from "./components/Test";
 
 const Container = styled.div`
 	padding-left: 150px;
@@ -29,7 +28,6 @@ const App = () => {
 			<Who />
 			<Works />
 			<Contact />
-			{/* <Test /> */}
 		</Container>
 	);
 };

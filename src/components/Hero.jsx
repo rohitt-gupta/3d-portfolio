@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import { OrbitControls } from "@react-three/drei";
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Cube from "./Cube";
 
@@ -107,7 +107,14 @@ const Hero = () => {
 						<Suspense fallback={null}>
 							<ambientLight intensity={0.5} />
 							<directionalLight position={[3, 2, 1]} />
-							<Sp />
+							<Sphere args={[1, 100, 200]} scale={1.4}>
+								<MeshDistortMaterial
+									color='#872dcb'
+									attach='material'
+									distort={0.5}
+									speed={2}
+								/>
+							</Sphere>
 							<OrbitControls enableZoom={false} autoRotate />
 						</Suspense>
 					</Canvas>
