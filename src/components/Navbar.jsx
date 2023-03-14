@@ -12,6 +12,7 @@ const Container = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 0px;
+	position: relative;
 
 	@media only screen and (max-width: 768px) {
 		width: 100%;
