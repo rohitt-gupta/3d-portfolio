@@ -25,7 +25,12 @@ const Links = styled.div`
 `;
 
 const Logo = styled.img`
+	height: 100px;
+	position: absolute;
+`;
+const Logo1 = styled.img`
 	height: 50px;
+	margin-right: 40px;
 `;
 
 const List = styled.ul`
@@ -67,6 +72,7 @@ const Navbar = () => {
 		<Section>
 			<Container>
 				<Links>
+					<Logo1 />
 					<Logo src='./img/logo.png' />
 					<List>
 						<ListItem>Home</ListItem>
