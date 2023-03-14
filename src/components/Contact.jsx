@@ -9,19 +9,30 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-	width: 100%;
+	width: 1300px;
 	height: 100%;
+
 	display: flex;
 	justify-content: space-between;
 	gap: 50px;
 	/* background-color: lightblue; */
+	@media only screen and (max-width: 768px) {
+		/* justify-content: center; */
+		width: 400px;
+		position: relative;
+		text-align: center;
+	}
 `;
 
 const Left = styled.div`
 	flex: 1;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: center;
+
+	@media only screen and (max-width: 768px) {
+		justify-content: center;
+	}
 `;
 
 const Title = styled.h1`
@@ -29,10 +40,18 @@ const Title = styled.h1`
 `;
 
 const Form = styled.form`
-	width: 500px;
+	width: 450px;
+	height: 80%;
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+
+	@media only screen and (max-width: 768px) {
+		width: 300px;
+		/* padding-left: 10px; */
+		position: absolute;
+		left: -100px;
+	}
 `;
 
 const Input = styled.input`
@@ -61,11 +80,9 @@ const Button = styled.button`
 
 const Right = styled.div`
 	flex: 1;
-	/* display: flex;
-	align-items: center;
-	justify-content: center; */
-
-	/* background-color: lightblue; */
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
 `;
 
 const Contact = () => {

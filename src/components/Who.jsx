@@ -15,13 +15,19 @@ const Section = styled.div`
 const Container = styled.div`
 	height: 100vh;
 	scroll-snap-align: center;
-	width: 1400px;
+	width: 1300px;
 	display: flex;
 	justify-content: space-between;
+	@media only screen and (max-width: 768px) {
+		width: 400px;
+	}
 `;
 
 const Left = styled.div`
 	flex: 1;
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
 	/* background-color: yellow; */
 `;
 
@@ -31,9 +37,18 @@ const Right = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	gap: 5px;
+
+	@media only screen and (max-width: 768px) {
+		align-items: center;
+		text-align: center;
+	}
 `;
 const Title = styled.h1`
 	font-size: 74px;
+
+	@media only screen and (max-width: 768px) {
+		font-size: 60px;
+	}
 `;
 const WhatWeDo = styled.div`
 	display: flex;

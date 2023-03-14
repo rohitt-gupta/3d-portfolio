@@ -13,13 +13,23 @@ const Section = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 768px) {
+		height: 200vh;
+	}
 `;
 
 const Container = styled.div`
-	height: 100vh;
-	width: 1400px;
+	height: 100%;
+	width: 1300px;
 	display: flex;
 	justify-content: space-between;
+	@media only screen and (max-width: 768px) {
+		width: 400px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 `;
 
 const Left = styled.div`
@@ -28,10 +38,17 @@ const Left = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	gap: 5px;
+	@media only screen and (max-width: 768px) {
+		flex: 1;
+		align-items: center;
+	}
 `;
 
 const Title = styled.h1`
 	font-size: 74px;
+	@media only screen and (max-width: 768px) {
+		text-align: center;
+	}
 `;
 const WhatWeDo = styled.div`
 	display: flex;
@@ -50,6 +67,10 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
 	font-size: 24px;
 	color: lightgray;
+	@media only screen and (max-width: 768px) {
+		padding: 20px;
+		text-align: center;
+	}
 `;
 
 const Button = styled.button`
@@ -66,10 +87,14 @@ const Button = styled.button`
 const Right = styled.div`
 	flex: 3;
 	position: relative;
+	@media only screen and (max-width: 768px) {
+		flex: 1;
+		width: 100vh;
+	}
 `;
 const Img = styled.img`
-	width: 800px;
-	height: 600px;
+	width: 700px;
+	height: 500px;
 	object-fit: contain;
 	position: absolute;
 	top: 0;
@@ -83,6 +108,27 @@ const Img = styled.img`
 		to {
 			transform: translateY(20px);
 		}
+	}
+	@media only screen and (max-width: 768px) {
+		width: 450px;
+		height: 450px;
+	}
+`;
+
+const Model = styled.div`
+	position: absolute;
+	/* top: 300px; */
+	left: 20px;
+	height: 100%;
+	width: 100%;
+	@media only screen and (max-width: 768px) {
+		width: 70%;
+		height: 70%;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: auto;
 	}
 `;
 
@@ -103,21 +149,23 @@ const Hero = () => {
 					<Button>Learn More</Button>
 				</Left>
 				<Right>
-					<Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
-						<Suspense fallback={null}>
-							<ambientLight intensity={0.5} />
-							<directionalLight position={[3, 2, 1]} />
-							<Sphere args={[1, 100, 200]} scale={1.4}>
-								<MeshDistortMaterial
-									color='#872dcb'
-									attach='material'
-									distort={0.5}
-									speed={2}
-								/>
-							</Sphere>
-							<OrbitControls enableZoom={false} autoRotate />
-						</Suspense>
-					</Canvas>
+					<Model>
+						<Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
+							<Suspense fallback={null}>
+								<ambientLight intensity={0.5} />
+								<directionalLight position={[3, 2, 1]} />
+								<Sphere args={[1, 100, 200]} scale={1.4}>
+									<MeshDistortMaterial
+										color='hsl(247.82608695652172, 89.14728682170544%, 25.294117647058822%)'
+										attach='material'
+										distort={0.5}
+										speed={2}
+									/>
+								</Sphere>
+								<OrbitControls enableZoom={false} autoRotate />
+							</Suspense>
+						</Canvas>
+					</Model>
 					<Img src='./img/moon.png'></Img>
 				</Right>
 			</Container>

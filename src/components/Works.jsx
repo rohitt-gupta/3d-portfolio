@@ -24,15 +24,27 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-	width: 1400px;
+	width: 1300px;
 	display: flex;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 768px) {
+		width: 400px;
+		flex-direction: column;
+		position: relative;
+	}
 `;
 
 const Left = styled.div`
 	flex: 1;
 	display: flex;
 	align-items: center;
+	@media only screen and (max-width: 768px) {
+		text-align: center;
+		position: absolute;
+		left: -70px;
+		top: 30px;
+	}
 	/* background-color: purple; */
 `;
 
@@ -44,13 +56,28 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-	font-size: 70px;
+	font-size: 68px;
 	font-weight: bold;
 	cursor: pointer;
 	color: transparent;
 	-webkit-text-stroke: 1px white;
 	position: relative;
 	font-family: sans-serif;
+	width: 100%;
+	@media only screen and (max-width: 768px) {
+		font-size: 24px;
+		color: white;
+		-webkit-text-stroke: 0;
+		z-index: 1;
+
+		::after {
+			display: none;
+		}
+
+		&:hover {
+			color: pink;
+		}
+	}
 
 	::after {
 		content: "${(props) => props.text}";
@@ -78,10 +105,26 @@ const ListItem = styled.li`
 
 const Right = styled.div`
 	flex: 1;
+	position: relative;
+
+	/* @media only screen and (max-width: 768px) {
+		position: relative;
+	} */
 `;
+
+// const Model = styled.div`
+// 	@media only screen and (max-width: 768px) {
+// 		width: 300px;
+// 		height: 300px;
+// 		position: absolute;
+// 		left: -85px;
+// 		bottom: 40px;
+// 	}
+// `;
 
 const Works = () => {
 	const [work, setWork] = useState("Web Design");
+	console.log("helloWork", work);
 	return (
 		<Section>
 			<Container>

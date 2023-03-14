@@ -7,11 +7,15 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-	width: 1400px;
+	width: 1300px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 0px;
+
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+	}
 `;
 
 const Links = styled.div`
@@ -32,6 +36,10 @@ const List = styled.ul`
 
 const ListItem = styled.li`
 	cursor: pointer;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
 `;
 
 const Icons = styled.div`
